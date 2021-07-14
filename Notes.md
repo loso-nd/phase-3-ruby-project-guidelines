@@ -43,7 +43,36 @@ Step 4: Build Models in lib @13.00
     - Once relationships are established we can run our code by testing the run.rb which loads the environment which runs the `lib` folder which runs our models/apps
     - ruby bin/run.rb
 
+    LETS REVIEW - @17.00
+        - We have a migration ( a way to save stuff )
+        - We have a model ( a way to interact with that stuff )
+        - Bc we inherit from AR, our classes receive .new | .save | .create the model sets up how we interact w/ database
+        - We do not have anything in the database, to add to the database we add instances in our seed file.
 
-Step 5: Create a
+Step 5: Add Creation Instances in Seeds files @20.00
+    - Destroy all instances at the top
+    - Create instances and run it w/ rake db:seed
+        - If nothing happens then our code is running properly
+    - Run rake console
+        - command: Doctor.all
+        - If all is well, we should see a list of doctors 
+    - Create instance of Patients and Appointments
+        -Note we store doctors & patients in variables bc we want to reference them later in our Appointments Instances
+    - rake db:seed (after creating instances)
+    - rake console (to test code)
+    
+
+clone > bundle > migrations > models > seed file > run it > build fun stuff
+run.rb runs our files to interact with our database
+
+Step 6: Create TTY Prompts @29.25
+    - gem 'tty- prompt' or gem install tty-prompt
+    - run bundle to use tty-prompt
+    - create a new instance of prompt = TTY::Prompt.new
+        - TTY - is a gem jsut like AR
+        - Prompt - is a module in it, just like AR
+        - dot.new - is a class method that we can call on Prompt. Which is calling a new class of that method
+        - .ask - Ask the user as question
+        - .mask - hids the response
 
 
